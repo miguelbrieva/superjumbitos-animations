@@ -4,7 +4,6 @@
 	--color-primary: royalBlue;
 	--color-primary-hover: dodgerBlue;
 	--text-color: #333;
-
 	--animation-duration-normal: 400ms;
 	--animation-duration-fast: 250ms;
 }
@@ -14,7 +13,6 @@ body {
 	display: grid;
 	place-items: center;
 	box-sizing: border-box;
-	color: dimgray;
 	font-family: sans-serif;
 	background-color: var(--main-bg-color);
 }
@@ -22,7 +20,6 @@ body {
 .card {
 	position: relative;
 	width: 250px;
-	/* height: 345px; */
 	height: 315px;
 	border-radius: 16px;
 	overflow: hidden;
@@ -66,6 +63,7 @@ body {
 }
 
 .top-content p {
+	color: var(--text-color);
 	padding: 0 16px;
 	line-height: 1.5em;
 	font-weight: lighter;
@@ -123,9 +121,9 @@ body {
 	padding-bottom: 100%;
 	overflow: visible;
 	animation-name: tada;
-	animation-fill-mode: both; 
-	animation-duration: 3s; 
-	animation-iteration-count: infinite;	
+	animation-fill-mode: both;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
 }
 
 .label:hover .svg-wrapper {
@@ -145,6 +143,7 @@ body {
 	0% {
 		transform: scale(1);
 	}
+
 	10% {
 		transform: scale(0.9) rotate(-3deg);
 	}
