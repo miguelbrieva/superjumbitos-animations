@@ -22,15 +22,16 @@ body {
 	width: 100%;
 	border-radius: 50%;
 	background-color: blueviolet;
+
 	/* animations properties */
-	animation-name: pulsation;
+	animation-name: pulse;
 	animation-duration: 500ms;
 	animation-iteration-count: infinite;
 	animation-timing-function: ease-in-out;
 	animation-direction: alternate;
 }
 
-@keyframes pulsation {
+@keyframes pulse {
 	from {
 		opacity: 0;
 	}

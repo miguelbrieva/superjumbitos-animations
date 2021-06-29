@@ -1,11 +1,13 @@
 :root {
-	--main-bg-color: aliceBlue;
-	--card-bg-color: white;
-	--color-primary: royalBlue;
-	--color-primary-hover: dodgerBlue;
-	--text-color: #333;
 	--animation-duration-normal: 400ms;
 	--animation-duration-fast: 250ms;
+	--animation-delay-normal: 400ms;
+	--animation-delay-slow: 1000ms;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
 }
 
 body {
@@ -21,7 +23,6 @@ body {
 .jumbito {
 	height: 300px;
 	width: 300px;
-	animation-name: enter;
 	position: relative;
 }
 
@@ -29,13 +30,13 @@ body {
 	position: absolute;
 	width: 100%;
 	top: 16em;
-	animation-name: enter;
-	animation-duration: 1s;
+	animation-name: enter-jumbito;
+	animation-duration: 500ms;
 	animation-fill-mode: forwards;
 	animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-@keyframes enter {
+@keyframes enter-jumbito {
 	from {
 		top: 16em;
 		opacity: 0;
@@ -47,28 +48,61 @@ body {
 }
 
 #phone {
-	animation-name: tada;
-	animation-duration: 1.5s;
+	animation-name: shake-phone;
+	animation-duration: 8000ms;
 	animation-fill-mode: forwards;
-	animation-delay: 1s;
+	animation-delay: 1500ms;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	transform-origin: center;
+	transform-box: fill-box;
 }
 
-@keyframes tada {
-	0% {
+@keyframes shake-phone {
+	from {
 		transform: scale(1);
 	}
-
-	70%, 100% {
-		transform: scale(1.1) rotate(3deg);
+	5% {
+		transform: scale(1.2) rotate(2deg) translateX(-5px);
+	}
+	10% {
+		transform: scale(1.2) rotate(2deg) translateX(-5px);
+	}
+	to {
+		transform: scale(1.2) rotate(2deg) translateX(-5px);
 	}
 }
 
-#inner-ears {
-	animation-name: bounce;
+#head {
+	animation-name: bounce-head, rotate-head;
 	animation-duration: 600ms;
-	animation-fill-mode: forward;
-	animation-delay: 1s;
+	animation-delay: 400ms, 2000ms;
+	animation-fill-mode: both, forwards;
 	animation-direction: alternate;
+	transform-origin: center;
+	transform-box: fill-box;
+}
+
+@keyframes rotate-head {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(5deg);
+	}
+}
+
+@keyframes bounce-head {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(20px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+	
 }
 
 @keyframes bounce {
@@ -84,34 +118,11 @@ body {
 	
 }
 
-#horn {
-	animation-name: bounce-horn;
-	animation-duration: 600ms;
-	animation-fill-mode: forward;
-	animation-delay: 1s;
-	animation-direction: alternate;
-}
-
-@keyframes bounce-horn {
-	0% {
-		transform: translateY(0);
-	}
-	50% {
-		transform: translateY(4px);
-	}
-	100% {
-		transform: translateY(0);
-	}
-	
-}
-
 #right-arm {
-	
 	animation-name: move-arm;
-	animation-fill-mode: both;
 	animation-duration: 1500ms;
 	animation-fill-mode: forwards;
-	animation-delay: 1s;
+	animation-delay: 3500ms;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 }
