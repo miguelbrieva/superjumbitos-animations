@@ -1,0 +1,41 @@
+body {
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+}
+
+.pulser {
+	position: relative;
+	height: 30px;
+	width: 30px;
+	background-color: rebeccapurple;
+	border-radius: 50px;
+}
+
+.pulser::before {
+	content: '';
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	background-color: blueviolet;
+	/* animations properties */
+	animation-name: pulsation;
+	animation-duration: 500ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate;
+}
+
+@keyframes pulsation {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: .4;
+		transform: scale(1.4);
+	}
+}
